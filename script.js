@@ -34,5 +34,13 @@ $(document).ready(function () {
             $('#error').show();
         }
         $('ul').sortable();
-    })
+    });
+
+//Event listener click on click of i
+
+//listedn for lick on i to remove items
+    $('ul').on('click', '.fa-times', function(){
+        //grab li and remove it from the list
+        $(this).parent().remove();
+    });
 })

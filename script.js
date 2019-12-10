@@ -12,6 +12,23 @@ $(document).ready(function () {
         const $input = $('input[type=text]');
         
         const todo = $input.val(); // saving string that was typed when submit is fired
-        console.log(todo); // check to make sure the string is saved
+        // console.log(todo); // check to make sure the string is saved
+
+        //only add item to list if vairable is not empty
+        //if not empty add to list (ul)
+        console.log(todo.trim());
+        if (todo.length > 0 && todo.trim !== ""){// BONUS what to do if people add spaces
+            //create a variable that holds new HTML
+            const item = `
+                <li>
+                    <span class="check todo"></span>${todo}
+                    <i class="fa fa-times"></i>
+                </li>`;
+            //add const item into the ul
+            $('ul').append(item);
+            //clear text inside input after sumbit is clicked
+            $input.val('');
+            // this.reset(); //vanilla JavaScript way of resetting
+        }
     })
 })

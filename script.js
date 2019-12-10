@@ -37,8 +37,18 @@ $(document).ready(function () {
     });
 
 //Event listener click on click of i
+    $('ul').on('click', 'li', function(){  // select ul first because li doesn't exist at page load
+        //swap out todo class for done class
+        //add class completed to the li
 
-//listedn for lick on i to remove items
+        //toggle class completed && todo and done 
+        $(this).toggleClass('completed'); //li wouldn't work because it will select all the li(s)
+        //this refers to the li we clicked on
+        $(this).find('.check').toggleClass('todo done');
+        $('this').appendTo($('ul'));
+    });
+
+//listedn for click on i to remove items
     $('ul').on('click', '.fa-times', function(){
         //grab li and remove it from the list
         $(this).parent().remove();

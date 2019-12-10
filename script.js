@@ -29,6 +29,10 @@ $(document).ready(function () {
             //clear text inside input after sumbit is clicked
             $input.val('');
             // this.reset(); //vanilla JavaScript way of resetting
+        }else{
+            //show error message
+            $('#error').show();
         }
+        $('ul').sortable();
     })
 })
